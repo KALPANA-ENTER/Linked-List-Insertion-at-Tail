@@ -1,0 +1,46 @@
+<script>
+var head; 
+class Node 
+{
+
+    constructor(d) 
+    {
+            this.data = d;
+            this.next = null;
+        }
+    }
+function insertEnd(new_data)
+{
+  var new_node = new Node(new_data);
+
+  if (head == null)
+  {
+    head = new Node(new_data);
+    return;
+  }
+
+  new_node.next = null;
+
+  var last = head;
+  while (last.next != null)
+    last = last.next;
+
+  last.next = new_node;
+  return;
+}
+
+function printList() 
+{
+    var tnode = head;
+    while (tnode != null) 
+    {
+        document.write(tnode.data + " ");
+        tnode = tnode.next;
+    }
+}
+
+insertEnd(7);
+insertEnd(0);
+insertEnd(3);
+insertEnd(8);
+</script>
